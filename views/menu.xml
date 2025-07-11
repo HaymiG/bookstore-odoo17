@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+
+    <!-- Root Menu (only once) -->
+    <menuitem id="menu_root_bookstore" name="Bookstore"/>
+
+    <!-- Actions -->
+    <record id="action_book_details_view" model="ir.actions.act_window">
+      <field name="name">Books</field>
+      <field name="res_model">book.details</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_book_rental" model="ir.actions.act_window">
+      <field name="name">Book Rentals</field>
+      <field name="res_model">book.rental</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Submenus -->
+    <menuitem id="menu_book_details" name="Books" parent="menu_root_bookstore" action="action_book_details_view"/>
+    <menuitem id="menu_book_rentals" name="Rentals" parent="menu_root_bookstore" action="action_book_rental"/>
+    <menuitem id="menu_bookstore_reports" name="Reports" parent="menu_root_bookstore" groups="base.group_user"/>
+    
+
+  </data>
+</odoo>
