@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+
+    <!-- Access rights -->
+    <record id="model_book_details_access" model="ir.model.access">
+      <field name="name">book.details access</field>
+      <field name="model_id" ref="model_book_details"/>
+      <field name="group_id" ref="base.group_user"/>
+      <field name="perm_read" eval="1"/>
+      <field name="perm_write" eval="1"/>
+      <field name="perm_create" eval="1"/>
+      <field name="perm_unlink" eval="1"/>
+    </record>
+
+    <record id="model_book_rental_access" model="ir.model.access">
+      <field name="name">book.rental access</field>
+      <field name="model_id" ref="model_book_rental"/>
+      <field name="group_id" ref="base.group_user"/>
+      <field name="perm_read" eval="1"/>
+      <field name="perm_write" eval="1"/>
+      <field name="perm_create" eval="1"/>
+      <field name="perm_unlink" eval="1"/>
+    </record>
+
+  </data>
+</odoo>
