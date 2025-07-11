@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_book_wizard_form" model="ir.ui.view">
+        <field name="name">book.wizard.form</field>
+        <field name="model">book.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Feature Books">
+                <group>
+                    <field name="book_ids" widget="many2many_tags"/>
+                    <field name="is_featured"/>
+                </group>
+                <footer>
+                    <button string="Apply" type="object" name="apply_featured" class="btn-primary"/>
+                    <button string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_open_book_wizard" model="ir.actions.act_window">
+        <field name="name">Feature Books Wizard</field>
+        <field name="res_model">book.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_book_wizard"
+              name="Feature Books Wizard"
+              parent="menu_root_bookstore"
+              action="action_open_book_wizard"
+              sequence="50"/>
+</odoo>
+
